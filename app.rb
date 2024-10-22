@@ -33,17 +33,15 @@ get("/sales") do
     store_code = 3
   end
   
-
-  request = "#{cheapshark_http}&storeID=#{store}&lowerPrice=#{lowerprice}&upperPrice=#{upperprice}&metacritic=#{metacritic}"
+  @request = "#{cheapshark_http}&storeID=#{store_code}&lowerPrice=#{lowerprice}&upperPrice=#{upperprice}&metacritic=#{metacritic}"
   aaa == "yes" ? aaa_option = "&AAA=0" : aaa_option = ""
-  @request += aaa_option
-  # title.to_s.length > 0 ? title_option = "&title=#{title}" : title_option = ""
-  # @request += title_option
-  
-  # @request += "&pageNumber=#{pagenumber}"
+  @request = @request + aaa_option
+  title.length > 0 ? title_option = "&title=#{title}" : title_option = ""
+  @request += title_option
+  @request += "&pageNumber=#{pagenumber}"
 
-  # raw_response = HTTP.get(@request)
-  # @parsed_response = JSON.parse(raw_response)
-  @test = request
+  raw_response = HTTP.get("#{@request}&pageNumber=#{pagenumber}")
+  @parsed_response = JSON.parse(raw_response)
+  @test = @parsed_response
   erb(:sales)
 end
