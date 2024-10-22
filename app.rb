@@ -1,12 +1,8 @@
 require "sinatra"
 require "sinatra/reloader"
 
-set :public_folder, File.dirname(__FILE__) + "/css"
+set :public_folder, __dir__ + '/'
 
 get("/") do
-  "
-  <h1>Welcome to your Sinatra App!</h1>
-  <p>Define some routes in app.rb</p>
-  "
   erb(:search)
 end
