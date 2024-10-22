@@ -1,0 +1,8 @@
+* {
+  border: 1px red dashed;
+}
+
+html {
+  /* makes the body fill the height of the window */
+  min-height: 100%;
+}
