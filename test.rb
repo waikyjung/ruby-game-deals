@@ -31,3 +31,7 @@ require "json"
 # parsed_response.each do |x|
 #   pp x.fetch("title") + " | " + x.fetch("salePrice").to_s
 # end
+
+aaa = ""
+aaa.to_s.length > 0 ? aaa = 0 : aaa = 1
+pp aaa
