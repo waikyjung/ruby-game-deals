@@ -6,3 +6,8 @@ html {
   /* makes the body fill the height of the window */
   min-height: 100%;
 }
+
+body {
+  background-color: linen;
+  font-size: 100px;
+}
