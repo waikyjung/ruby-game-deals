@@ -10,14 +10,13 @@ html {
 .optionbox {
   max-width: 400px;
   margin: 0 auto;
-  background-color: gray;
-  font-size: 20px;
+  background-color: green;
+  font-size: 18px;
   display: flex;
-  
 }
 
 .label {
-  width: 200px;
+  width: 180px;
   text-align: right;
   margin: 5px 5px;
 }
@@ -26,5 +25,8 @@ html {
   width: 200px;
   text-align: left;
   margin: 5px 5px;
+}
 
+.search {
+  margin: 5px auto;
 }

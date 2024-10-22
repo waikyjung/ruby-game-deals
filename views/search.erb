@@ -1,23 +1,66 @@
-<div class="optionbox">
+<form action="/sales">
 
-  <div class="label">
-    <label for="store">Store:</label>
-  </div>
-  <div class="option">
-    <select name="store" id="store">
-      <option value="Steam">Steam</option>
-      <option value="GOG">GOG</option>
-      <option value="Green Man Gaming">Green Man Gaming</option>
-    </select>
+  <div class="optionbox">
+    <div class="label">
+      <label for="store">Store:</label>
+    </div>
+    <div class="option">
+      <select name="store" id="store">
+        <option value="Steam">Steam</option>
+        <option value="GOG">GOG</option>
+        <option value="Green Man Gaming">Green Man Gaming</option>
+      </select>
+    </div>
   </div>
 
-</div>
+  <div class="optionbox">
+    <div class="label">
+      <label for="lowerprice">Minimum Price:</label>
+    </div>
+    <div class="option">
+      <input type="text" id="lowerprice" name="lowerprice" size=17 value=0>
+    </div>
+  </div>
 
-<div class="optionbox">
-  <div class="label">
-    test
+  <div class="optionbox">
+    <div class="label">
+      <label for="upperprice">Maximum Price:</label>
+    </div>
+    <div class="option">
+      <input type="text" id="upperprice" name="upperprice" size=17 value=15>
+    </div>
   </div>
-  <div class="option">
-    test
+
+  <div class="optionbox">
+    <div class="label">
+      <label for="metacritic">Min. Metacritic Score:</label>
+    </div>
+    <div class="option">
+      <input type="text" id="metacritic" name="metacritic" size=17 value=80>
+    </div>
   </div>
-</div>
+
+  <div class="optionbox">
+    <div class="label">
+      <label for="AAA">AAA Games Only:</label>
+    </div>
+    <div class="option">
+      <input type="checkbox" id="AAA" name="AAA" value="yes" checked>
+    </div>
+  </div>
+
+  <div class="optionbox">
+    <div class="label">
+      <label for="title">Must Contain:</label>
+    </div>
+    <div class="option">
+      <input type="text" id="title" name="title" placeholder="Batman, Tetris, etc." style="font-style:italic" size=17>
+    </div>
+  </div>
+
+  <div class="optionbox">
+    <div class="search">
+      <button>Search</button>
+    </div>
+  </div>
+</form>
