@@ -38,6 +38,7 @@ get("/sales") do
   data_request = "#{cheapshark_http}&storeID=#{store_code}&lowerPrice=#{lowerprice}&upperPrice=#{upperprice}&metacritic=#{metacritic}"
   data_request += aaa_option
   data_request += title_option
+  data_request += "&onSale=1"
   data_request += "&pageNumber="
 
   raw_response = HTTP.get("#{data_request}#{@pagenumber}")
@@ -50,13 +51,13 @@ get("/sales") do
       sale.fetch("metacriticLink"),
       sale.fetch("salePrice"),
       sale.fetch("normalPrice"),
-      sale.fetch("savings"),
+      sale.fetch("savings").to_f.round(0),
       sale.fetch("metacriticScore"),
       sale.fetch("steamRatingPercent"),
       sale.fetch("dealRating"),
       sale.fetch("thumb")
     ])
   end
-  
+  @test = data_request
   erb(:sales)
 end

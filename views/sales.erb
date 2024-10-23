@@ -1,3 +1,49 @@
+<!--Game Deals-->
+<% @sales.each do |game| %>
+
+<div class="dealcontainer">
+
+  <div class="titlecontainer">
+    <div class="thumbnail"><img src=<%= game[8] %> ></div>
+    <div class="title"><%= game[0] %></div>
+  </div>
+  
+  <div class="data">
+    
+    <div class="bold">
+      <div>Original Price:</div>
+      <div>Sale Price:</div>
+      <div>Discount:</div>
+    </div>
+
+    <div>
+        <div class="price">$<%= game[3] %></div>
+        <div class="bold">$<%= game[2] %></div>
+        <div><%= game[4] %>%</div>
+    </div>
+    
+    <div></div>
+
+    <div class="bold">
+      <div>Deal Rating:</div>
+      <div>Steam Rating:</div>
+      <div>Metacritic Rating:</div>
+      <div>Metacritic Link:</div>
+    </div>
+
+    <div>
+      <div class="bold"><%= game[7] %></div>
+      <div><%= game[6] %>%</div>
+      <div><%= game[5] %>%</div>
+      <div><a href="https://www.metacritic.com<%= game[1] %>" target="_blank">metacritic.com</a></div>
+    </div>
+
+  </div>
+</div>
+<br>
+<% end %>
+
+<!--Previous & Next Page-->
 <% current_path = request.fullpath %>
 <% cutoff = current_path.index("&pagenumber=") %>
 <% current_path = current_path[0..cutoff + 11] %>
@@ -24,49 +70,4 @@
       Next <%= right_arrow%>
     <% end %>
   </h3>
-  
 </div>
-
-<% @sales.each do |game| %>
-
-<div class="dealcontainer">
-
-  <div class="titlecontainer">
-    <div class="thumbnail"><img src=<%= game[8] %> ></div>
-    <div class="title"><%= game[0] %></div>
-  </div>
-  
-  <div class="data">
-    
-    <div class="bold">
-      <div>Original Price:</div>
-      <div>Sale Price:</div>
-      <div>Discount:</div>
-    </div>
-
-    <div>
-        <div class="price">$<%= game[3] %></div>
-        <div class="bold">$<%= game[2] %></div>
-        <div><%= game[7] %>%</div>
-    </div>
-    
-    <div></div>
-
-    <div class="bold">
-      <div>Deal Rating:</div>
-      <div>Steam Rating:</div>
-      <div>Metacritic Rating:</div>
-      <div>Metacritic Link:</div>
-    </div>
-
-    <div>
-      <div class="bold"><%= game[7] %></div>
-      <div><%= game[6] %>%</div>
-      <div><%= game[5] %>%</div>
-      <div><a href="https://www.metacritic.com<%= game[1] %>" target="_blank">metacritic.com</a></div>
-    </div>
-
-  </div>
-</div>
-<br>
-<% end %>
