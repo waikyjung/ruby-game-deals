@@ -32,7 +32,7 @@ get("/sales") do
   params[:AAA] ? aaa = params.fetch("AAA") : aaa = ""
   aaa == "yes" ? aaa_option = "&AAA=0" : aaa_option = ""
   params[:title] ? title = params.fetch("title") :  title = ""
-  title.to_s.length > 0 ? title_option = title : title_option = ""
+  title.to_s.length > 0 ? title_option = "&title=#{title}" : title_option = ""
   @pagenumber = params.fetch("pagenumber")
 
   data_request = "#{cheapshark_http}&storeID=#{store_code}&lowerPrice=#{lowerprice}&upperPrice=#{upperprice}&metacritic=#{metacritic}"
