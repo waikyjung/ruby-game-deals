@@ -1,73 +1,77 @@
 <!--Game Deals-->
-<% @sales.each do |game| %>
+<% if @sales.count == 0 %>
+  <div class="pages">No Deals Found</div>
+<% else %>
+  <% @sales.each do |game| %>
 
-<div class="dealcontainer">
+  <div class="dealcontainer">
 
-  <div class="titlecontainer">
-    <div class="thumbnail"><img src=<%= game[8] %> ></div>
-    <div class="title"><%= game[0] %></div>
-  </div>
-  
-  <div class="data">
-    
-    <div class="bold">
-      <div>Original Price:</div>
-      <div>Sale Price:</div>
-      <div>Discount:</div>
-    </div>
-
-    <div>
-        <div class="price">$<%= game[3] %></div>
-        <div class="bold">$<%= game[2] %></div>
-        <div><%= game[4] %>%</div>
+    <div class="titlecontainer">
+      <div class="thumbnail"><img src=<%= game[8] %> ></div>
+      <div class="title"><%= game[0] %></div>
     </div>
     
-    <div></div>
+    <div class="data">
+      
+      <div class="bold">
+        <div>Original Price:</div>
+        <div>Sale Price:</div>
+        <div>Discount:</div>
+      </div>
 
-    <div class="bold">
-      <div>Deal Rating:</div>
-      <div>Steam Rating:</div>
-      <div>Metacritic Rating:</div>
-      <div>Metacritic Link:</div>
+      <div>
+          <div class="price">$<%= game[3] %></div>
+          <div class="bold">$<%= game[2] %></div>
+          <div><%= game[4] %>%</div>
+      </div>
+      
+      <div></div>
+
+      <div class="bold">
+        <div>Deal Rating:</div>
+        <div>Steam Rating:</div>
+        <div>Metacritic Rating:</div>
+        <div>Metacritic Link:</div>
+      </div>
+
+      <div>
+        <div class="bold"><%= game[7] %></div>
+        <div><%= game[6] %>%</div>
+        <div><%= game[5] %>%</div>
+        <div><a href="https://www.metacritic.com<%= game[1] %>" target="_blank">metacritic.com</a></div>
+      </div>
+
     </div>
-
-    <div>
-      <div class="bold"><%= game[7] %></div>
-      <div><%= game[6] %>%</div>
-      <div><%= game[5] %>%</div>
-      <div><a href="https://www.metacritic.com<%= game[1] %>" target="_blank">metacritic.com</a></div>
-    </div>
-
   </div>
-</div>
-<br>
+  <br>
+  <% end %>
+
+  <!--Previous & Next Page-->
+  <% current_path = request.fullpath %>
+  <% cutoff = current_path.index("&pagenumber=") %>
+  <% current_path = current_path[0..cutoff + 11] %>
+
+  <div class="pages">
+    <% left_arrow = "<" %>
+    <% right_arrow = ">" %>
+    <% @pagenumber = @pagenumber.to_i %>
+    <% previouspage = @pagenumber - 1 %>
+    <% nextpage = @pagenumber + 1 %>
+    
+    <h3>
+      <% if @pagenumber == 0 %>
+        <%= left_arrow%> Previous
+      <% else %>
+        <a href="<%= current_path %><%= previouspage %>"><%= left_arrow %> Previous</a>
+      <% end %>
+      
+      | Page <%= nextpage %> |
+
+      <% if @sales.count == 60 %>
+        <a href="<%= current_path %><%= nextpage %>">Next <%= right_arrow %></a>
+      <% else %>
+        Next <%= right_arrow%>
+      <% end %>
+    </h3>
+  </div>
 <% end %>
-
-<!--Previous & Next Page-->
-<% current_path = request.fullpath %>
-<% cutoff = current_path.index("&pagenumber=") %>
-<% current_path = current_path[0..cutoff + 11] %>
-
-<div class="pages">
-  <% left_arrow = "<" %>
-  <% right_arrow = ">" %>
-  <% @pagenumber = @pagenumber.to_i %>
-  <% previouspage = @pagenumber - 1 %>
-  <% nextpage = @pagenumber + 1 %>
-  
-  <h3>
-    <% if @pagenumber == 0 %>
-      <%= left_arrow%> Previous
-    <% else %>
-      <a href="<%= current_path %><%= previouspage %>"><%= left_arrow %> Previous</a>
-    <% end %>
-    
-    | Page <%= nextpage %> |
-
-    <% if @sales.count == 60 %>
-      <a href="<%= current_path %><%= nextpage %>">Next <%= right_arrow %></a>
-    <% else %>
-      Next <%= right_arrow%>
-    <% end %>
-  </h3>
-</div>
