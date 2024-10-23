@@ -52,7 +52,6 @@ get("/sales") do
       sale.fetch("normalPrice"),
       sale.fetch("savings"),
       sale.fetch("metacriticScore"),
-      sale.fetch("steamRatingText"),
       sale.fetch("steamRatingPercent"),
       sale.fetch("dealRating"),
       sale.fetch("thumb")
