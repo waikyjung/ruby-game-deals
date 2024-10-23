@@ -33,15 +33,33 @@ get("/sales") do
   aaa == "yes" ? aaa_option = "&AAA=0" : aaa_option = ""
   params[:title] ? title = params.fetch("title") :  title = ""
   title.to_s.length > 0 ? title_option = title : title_option = ""
-  pagenumber = params.fetch("pagenumber")
-
+  @pagenumber = params.fetch("pagenumber")
 
   request = "#{cheapshark_http}&storeID=#{store_code}&lowerPrice=#{lowerprice}&upperPrice=#{upperprice}&metacritic=#{metacritic}"
   request += aaa_option
   request += title_option
+  request += "&pageNumber="
 
-  raw_response = HTTP.get("#{request}&pageNumber=#{pagenumber}")
+  raw_response = HTTP.get("#{request}#{@pagenumber}")
   parsed_response = JSON.parse(raw_response)
-  @test = parsed_response
+  
+  @sales = []
+  parsed_response.each do |sale|
+    @sales.push([
+      sale.fetch("title"),
+      sale.fetch("metacriticLink"),
+      sale.fetch("salePrice"),
+      sale.fetch("normalPrice"),
+      sale.fetch("savings"),
+      sale.fetch("metacriticScore"),
+      sale.fetch("steamRatingText"),
+      sale.fetch("steamRatingPercent"),
+      sale.fetch("dealRating"),
+      sale.fetch("thumb")
+    ])
+  end
+  
+  @full_request = request
+  @test = request
   erb(:sales)
 end

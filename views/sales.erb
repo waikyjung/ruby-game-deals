@@ -1,12 +1,18 @@
-<%= @test %><br>
 
 
 
-<!--<ul>-->
-<%# @parsed_response.each do |game| %>
-<!--  <li>-->
-  <%#= game.fetch("title") %>
-<!--  </li>-->
-<%# end %>
-<!--</ul>
--->
+<% @sales.each do |game| %>
+
+  <%= game[0] %>
+  <%= game[1] %>
+  <%= game[2] %>
+  <%= game[3] %>
+  <%= game[4] %>
+  <%= game[5] %>
+  <%= game[6] %>
+  <%= game[7] %>
+  <%= game[8] %>
+  <%= game[9] %>
+  <br><br>
+
+<% end %>
