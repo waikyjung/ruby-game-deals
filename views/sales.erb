@@ -13,20 +13,25 @@ sale.fetch("thumb")-->
 <% @sales.each do |game| %>
 
 <div class="dealcontainer">
+
   <div class="titlecontainer">
     <div class="thumbnail"><img src=<%= game[9] %> ></div>
     <div class="title"><%= game[0] %></div>
   </div>
   
   <div class="data">
-    <div>
-      <div class="price1"><%= game[3] %></div>
-      <div class="price2"><%= game[2] %></div>
-      <div class="price3"><%= game[7] %></div>
+    <div class="steamlabel">
+      <div>Original Price:</div>
+      <div>Sale Price:</div>
+      <div>Discount:</div>
+    </div>
+
+    <div class="steamdata">
+        <div class="price1">$<%= game[3] %></div>
+        <div class="price2">$<%= game[2] %></div>
+        <div class="price3"><%= game[7] %>%</div>
     </div>
     
-    <div class="data"> Test 2 </div>
-    <div class="data"> Test 3 </div>
   </div>
 </div>
 <br>

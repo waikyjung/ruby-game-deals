@@ -52,6 +52,25 @@ html {
   font-size: 20px;
 }
 
-.data {
+.data{
   display: flex;
+}
+
+.steamlabel {
+  text-align: right;
+  margin: 5px 5px;
+}
+
+.steamdata {
+  text-align: right;
+  margin: 5px 5px;
+}
+
+.price1 {
+  text-decoration: line-through;
+  color: red;
+}
+
+.price2 {
+  font-weight: bold;
 }
