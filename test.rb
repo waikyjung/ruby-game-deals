@@ -32,6 +32,7 @@ require "json"
 #   pp x.fetch("title") + " | " + x.fetch("salePrice").to_s
 # end
 
-aaa = ""
-aaa.to_s.length > 0 ? aaa = 0 : aaa = 1
-pp aaa
+current = "sales?store=Steam&lowerprice=0&upperprice=15&metacritic=80&AAA=yes&title=&pagenumber=0"
+
+cutoff = current.index("&pagenumber=")
+pp current[0..cutoff+11]

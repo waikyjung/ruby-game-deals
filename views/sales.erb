@@ -1,9 +1,30 @@
-<div class="pages">
-  <%# left_arrow = "<" %>
-  <%# right_arrow = ">" %>
-  <%# @pagenumber = @pagenumber.to_i %>
+<% current_path = request.fullpath %>
+<% cutoff = current_path.index("&pagenumber=") %>
+<% current_path = current_path[0..cutoff + 11] %>
 
-  <h2><a href="<%= request.fullpath %>">url</a></h2>
+<div class="pages">
+  <% left_arrow = "<" %>
+  <% right_arrow = ">" %>
+  <% @pagenumber = @pagenumber.to_i %>
+  <% previouspage = @pagenumber - 1 %>
+  <% nextpage = @pagenumber + 1 %>
+  
+  <h3>
+    <% if @pagenumber == 0 %>
+      <%= left_arrow%> Previous
+    <% else %>
+      <a href="<%= current_path %><%= previouspage %>"><%= left_arrow %> Previous</a>
+    <% end %>
+    
+    | Page <%= nextpage %> |
+
+    <% if @sales.count == 60 %>
+      <a href="<%= current_path %><%= nextpage %>">Next <%= right_arrow %></a>
+    <% else %>
+      Next <%= right_arrow%>
+    <% end %>
+  </h3>
+  
 </div>
 
 <% @sales.each do |game| %>
