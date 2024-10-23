@@ -35,12 +35,12 @@ get("/sales") do
   title.to_s.length > 0 ? title_option = title : title_option = ""
   @pagenumber = params.fetch("pagenumber")
 
-  request = "#{cheapshark_http}&storeID=#{store_code}&lowerPrice=#{lowerprice}&upperPrice=#{upperprice}&metacritic=#{metacritic}"
-  request += aaa_option
-  request += title_option
-  request += "&pageNumber="
+  data_request = "#{cheapshark_http}&storeID=#{store_code}&lowerPrice=#{lowerprice}&upperPrice=#{upperprice}&metacritic=#{metacritic}"
+  data_request += aaa_option
+  data_request += title_option
+  data_request += "&pageNumber="
 
-  raw_response = HTTP.get("#{request}#{@pagenumber}")
+  raw_response = HTTP.get("#{data_request}#{@pagenumber}")
   parsed_response = JSON.parse(raw_response)
   
   @sales = []
@@ -58,6 +58,5 @@ get("/sales") do
     ])
   end
   
-  @full_request = request
   erb(:sales)
 end

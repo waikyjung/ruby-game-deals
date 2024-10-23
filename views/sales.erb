@@ -3,7 +3,7 @@
   <%# right_arrow = ">" %>
   <%# @pagenumber = @pagenumber.to_i %>
 
-  <h2><a href="<%= @full_request %><%= @pagenumber.to_i + 1 %>">test</a></h2>
+  <h2><a href="<%= request.fullpath %>">url</a></h2>
 </div>
 
 <% @sales.each do |game| %>
