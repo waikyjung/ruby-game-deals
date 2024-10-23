@@ -59,6 +59,5 @@ get("/sales") do
   end
   
   @full_request = request
-  @test = request
   erb(:sales)
 end

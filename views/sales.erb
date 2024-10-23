@@ -1,3 +1,10 @@
+<div class="pages">
+  <%# left_arrow = "<" %>
+  <%# right_arrow = ">" %>
+  <%# @pagenumber = @pagenumber.to_i %>
+
+  <h2><a href="<%= @full_request %><%= @pagenumber.to_i + 1 %>">test</a></h2>
+</div>
 
 <% @sales.each do |game| %>
 
@@ -32,7 +39,7 @@
     </div>
 
     <div>
-      <div><%= game[7] %></div>
+      <div class="bold"><%= game[7] %></div>
       <div><%= game[6] %>%</div>
       <div><%= game[5] %>%</div>
       <div><a href="https://www.metacritic.com<%= game[1] %>" target="_blank">metacritic.com</a></div>
