@@ -1,18 +1,33 @@
-
+<!--sale.fetch("title"),
+sale.fetch("metacriticLink"),
+sale.fetch("salePrice"),
+sale.fetch("normalPrice"),
+sale.fetch("savings"),
+sale.fetch("metacriticScore"),
+sale.fetch("steamRatingText"),
+sale.fetch("steamRatingPercent"),
+sale.fetch("dealRating"),
+sale.fetch("thumb")-->
 
 
 <% @sales.each do |game| %>
 
-  <%= game[0] %>
-  <%= game[1] %>
-  <%= game[2] %>
-  <%= game[3] %>
-  <%= game[4] %>
-  <%= game[5] %>
-  <%= game[6] %>
-  <%= game[7] %>
-  <%= game[8] %>
-  <%= game[9] %>
-  <br><br>
-
+<div class="dealcontainer">
+  <div class="titlecontainer">
+    <div class="thumbnail"><img src=<%= game[9] %> ></div>
+    <div class="title"><%= game[0] %></div>
+  </div>
+  
+  <div class="data">
+    <div>
+      <div class="price1"><%= game[3] %></div>
+      <div class="price2"><%= game[2] %></div>
+      <div class="price3"><%= game[7] %></div>
+    </div>
+    
+    <div class="data"> Test 2 </div>
+    <div class="data"> Test 3 </div>
+  </div>
+</div>
+<br>
 <% end %>

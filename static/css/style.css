@@ -12,7 +12,7 @@ html {
   margin: 0 auto;
   background-color: green;
   font-size: 18px;
-  display: flex;
+  display: flex
 }
 
 .label {
@@ -29,4 +29,29 @@ html {
 
 .search {
   margin: 5px auto;
+}
+
+.dealcontainer {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: rgb(220, 198, 71);
+  justify-content: space-around;
+}
+
+.titlecontainer {
+  display: flex;
+}
+
+.thumbnail {
+  padding: 5px 5px 0px 5px;
+}
+
+.title {
+  margin: auto auto;
+  padding-right: 60px;
+  font-size: 20px;
+}
+
+.data {
+  display: flex;
 }
