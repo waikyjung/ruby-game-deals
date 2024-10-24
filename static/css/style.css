@@ -10,6 +10,7 @@ body {
   background-color: rgba(0, 0, 0, 0.847);
 }
 
+/* Search Box */
 .optionbox {
   max-width: 400px;
   margin: 0 auto;
@@ -34,6 +35,16 @@ body {
   margin: 5px auto;
 }
 
+/* Store Logo */
+.store {
+  text-align: center;
+  font-size: 28px;
+  color: white;
+  padding-bottom: 20px;
+}
+
+
+/* Deal Box */
 .dealcontainer {
   max-width: 500px;
   margin: 0 auto;
@@ -75,6 +86,7 @@ body {
   font-weight: bold;
 }
 
+/* Page Navigation */
 .pages {
   font-size: 20px;
   color: white;

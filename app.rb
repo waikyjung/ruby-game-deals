@@ -19,29 +19,29 @@ get("/sales") do
   store = params.fetch("store")
   case store
   when "Steam"
-    store_code = 1
+    @store_code = 1
   when "GamersGate"
-    store_code = 2
+    @store_code = 2
   when "GOG"
-    store_code = 7
+    @store_code = 7
   when "Origin"
-    store_code = 8
+    @store_code = 8
   when "Humble Store"
-    store_code = 11
+    @store_code = 11
   when "Uplay"
-    store_code = 13
+    @store_code = 13
   when "Fanatical"
-    store_code = 15
+    @store_code = 15
   when "WinGameStore"
-    store_code = 21
+    @store_code = 21
   when "GameBillet"
-    store_code = 23
+    @store_code = 23
   when "Epic Games Store"
-    store_code = 25
+    @store_code = 25
   when "Gamesplanet"
-    store_code = 27
+    @store_code = 27
   when "IndieGala"
-    store_code = 30
+    @store_code = 30
   end
 
   lowerprice = params.fetch("lowerprice")
@@ -53,7 +53,7 @@ get("/sales") do
   title.to_s.length > 0 ? title_option = "&title=#{title}" : title_option = ""
   @pagenumber = params.fetch("pagenumber")
 
-  data_request = "#{cheapshark_http}&storeID=#{store_code}&lowerPrice=#{lowerprice}&upperPrice=#{upperprice}&metacritic=#{metacritic}"
+  data_request = "#{cheapshark_http}&storeID=#{@store_code}&lowerPrice=#{lowerprice}&upperPrice=#{upperprice}&metacritic=#{metacritic}"
   data_request += aaa_option
   data_request += title_option
   data_request += "&onSale=1"
@@ -77,5 +77,5 @@ get("/sales") do
     ])
   end
   @test = data_request
-  erb(:sales)
+  erb(:deals)
 end
