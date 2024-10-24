@@ -62,20 +62,20 @@ get("/sales") do
   raw_response = HTTP.get("#{data_request}#{@pagenumber}")
   parsed_response = JSON.parse(raw_response)
   
-  @sales = []
-  parsed_response.each do |sale|
-    @sales.push([
-      sale.fetch("title"),
-      sale.fetch("metacriticLink"),
-      sale.fetch("salePrice"),
-      sale.fetch("normalPrice"),
-      sale.fetch("savings").to_f.round(0),
-      sale.fetch("metacriticScore"),
-      sale.fetch("steamRatingPercent"),
-      sale.fetch("dealRating"),
-      sale.fetch("thumb")
+  @deals = []
+  parsed_response.each do |deal|
+    @deals.push([
+      deal.fetch("title"),
+      deal.fetch("metacriticLink"),
+      deal.fetch("salePrice"),
+      deal.fetch("normalPrice"),
+      deal.fetch("savings").to_f.round(0),
+      deal.fetch("metacriticScore"),
+      deal.fetch("steamRatingPercent"),
+      deal.fetch("dealRating"),
+      deal.fetch("thumb")
     ])
   end
-  @test = data_request
+  
   erb(:deals)
 end

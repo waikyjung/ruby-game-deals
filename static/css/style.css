@@ -13,6 +13,18 @@ body {
   background-color: rgba(0, 0, 0, 0.847);
 }
 
+/* Game Deals Logo */
+.logo {
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  padding-bottom: 30px;
+}
+
+.link{
+  color: green;
+}
+
 /* Search Box */
 .container {
   max-width: 400px;
