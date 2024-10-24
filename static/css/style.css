@@ -51,11 +51,29 @@ body {
   padding: 0px 10px;
 }
 
-.dealcontainer {
+.dealgold {
   max-width: 500px;
   margin: 0 auto;
   padding: 10px 10px;
   background: linear-gradient(120deg, #ffe902, #ffe105, #ffd90a, #ffd110, #ffc915, #ffc11b, #ffb920, #ffb124);
+  justify-content: space-around;
+  border-radius: 10px;
+}
+
+.dealsilver {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 10px 10px;
+  background: linear-gradient(120deg, #e8f1ff, #dae4f0, #ccd8e1, #bfcbd2, #b3bfc3, #a7b2b5, #9ca5a7, #919999);
+  justify-content: space-around;
+  border-radius: 10px;
+}
+
+.dealbronze {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 10px 10px;
+  background: radial-gradient(circle at 20% 0%, #ff8b17, #f8831e, #f07b24, #e87328, #e06c2b, #d7642e, #ce5e30, #c55731);
   justify-content: space-around;
   border-radius: 10px;
 }

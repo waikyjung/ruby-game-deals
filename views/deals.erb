@@ -10,49 +10,55 @@
   <div class="pages">No Deals Found</div>
 <% else %>
   <% @sales.each do |game| %>
-  
+    <% dealrating = game[7].to_f %>
+    <% if dealrating >= 9.0 %>
+    <%  dealrank = "dealgold" %>
+    <% elsif dealrating >= 8.0 %>
+    <%  dealrank = "dealsilver" %>
+    <% else %>
+    <%  dealrank = "dealbronze" %>
+    <% end %>
 
+    <div class="<%= dealrank %>">
 
-  <div class="dealcontainer">
-
-    <div class="titlecontainer">
-      <div class="thumbnail"><img src=<%= game[8] %> ></div>
-      <div class="title"><%= game[0] %></div>
-    </div>
-    
-    <div class="data">
-      
-      <div class="bold">
-        <div>Original Price:</div>
-        <div>Sale Price:</div>
-        <div>Discount:</div>
-      </div>
-
-      <div>
-          <div class="price">$<%= game[3] %></div>
-          <div class="bold">$<%= game[2] %></div>
-          <div><%= game[4] %>%</div>
+      <div class="titlecontainer">
+        <div class="thumbnail"><img src=<%= game[8] %> ></div>
+        <div class="title"><%= game[0] %></div>
       </div>
       
-      <div class="gap"></div>
+      <div class="data">
+        
+        <div class="bold">
+          <div>Original Price:</div>
+          <div>Sale Price:</div>
+          <div>Discount:</div>
+        </div>
 
-      <div class="bold">
-        <div>Deal Rating:</div>
-        <div>Steam Rating:</div>
-        <div>Metacritic Rating:</div>
-        <div>Metacritic Link:</div>
+        <div>
+            <div class="price">$<%= game[3] %></div>
+            <div class="bold">$<%= game[2] %></div>
+            <div><%= game[4] %>%</div>
+        </div>
+        
+        <div class="gap"></div>
+
+        <div class="bold">
+          <div>Deal Rating:</div>
+          <div>Steam Rating:</div>
+          <div>Metacritic Rating:</div>
+          <div>Metacritic Link:</div>
+        </div>
+
+        <div>
+          <div class="bold"><%= game[7] %></div>
+          <div><%= game[6] %>%</div>
+          <div><%= game[5] %>%</div>
+          <div><a href="https://www.metacritic.com<%= game[1] %>" target="_blank">metacritic.com</a></div>
+        </div>
+
       </div>
-
-      <div>
-        <div class="bold"><%= game[7] %></div>
-        <div><%= game[6] %>%</div>
-        <div><%= game[5] %>%</div>
-        <div><a href="https://www.metacritic.com<%= game[1] %>" target="_blank">metacritic.com</a></div>
-      </div>
-
     </div>
-  </div>
-  <br>
+    <br>
   <% end %>
 
   <!--Previous & Next Page-->
