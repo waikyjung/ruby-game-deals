@@ -20,10 +20,28 @@ get("/sales") do
   case store
   when "Steam"
     store_code = 1
+  when "GamersGate"
+    store_code = 2
   when "GOG"
     store_code = 7
-  when "Green Man Gaming"
-    store_code = 3
+  when "Origin"
+    store_code = 8
+  when "Humble Store"
+    store_code = 11
+  when "Uplay"
+    store_code = 13
+  when "Fanatical"
+    store_code = 15
+  when "WinGameStore"
+    store_code = 21
+  when "GameBillet"
+    store_code = 23
+  when "Epic Games Store"
+    store_code = 25
+  when "Gamesplanet"
+    store_code = 27
+  when "IndieGala"
+    store_code = 30
   end
 
   lowerprice = params.fetch("lowerprice")

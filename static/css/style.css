@@ -1,6 +1,6 @@
-* {
-  /* border: 1px red dashed; */
-}
+/* * {
+  border: 1px red dashed;
+} */
 
 html {
   min-height: 100%;
@@ -53,9 +53,10 @@ body {
 
 .title {
   margin: auto auto;
-  padding-right: 60px;
+  padding-right: 50px;
   font-size: 18px;
   font-weight: bold;
+  text-align: center;
 }
 
 .data{
