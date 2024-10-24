@@ -5,12 +5,13 @@
   <div>Deals</div>
 </div>
   
-
 <!--Game Deals-->
 <% if @sales.count == 0 %>
   <div class="pages">No Deals Found</div>
 <% else %>
   <% @sales.each do |game| %>
+  
+
 
   <div class="dealcontainer">
 
@@ -33,7 +34,7 @@
           <div><%= game[4] %>%</div>
       </div>
       
-      <div></div>
+      <div class="gap"></div>
 
       <div class="bold">
         <div>Deal Rating:</div>
