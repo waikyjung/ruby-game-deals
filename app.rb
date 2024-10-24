@@ -14,7 +14,7 @@ get("/search") do
   erb(:search)
 end
 
-get("/sales") do
+get("/deals") do
   cheapshark_http = "https://www.cheapshark.com/api/1.0/deals?"
   
   store = params.fetch("store")
