@@ -14,28 +14,33 @@ body {
 }
 
 /* Search Box */
-.optionbox {
+.container {
   max-width: 400px;
   margin: 0 auto;
-  background-color: green;
+  padding: 20px 20px;
+  background: linear-gradient(90deg, #29bd09, #23b50f, #1dad12, #17a615, #119e17, #0b9618, #058f19, #00871a);
   font-size: 18px;
-  display: flex
+  text-align: center;
+  border-radius: 10px;
 }
 
-.label {
+.optionscontainer {
+  display: flex;
+  padding-bottom: 10px;
+}
+
+.labels {
   width: 180px;
   text-align: right;
   margin: 5px 5px;
+  line-height: 1.6;
 }
 
-.option {
+.options {
   width: 200px;
   text-align: left;
   margin: 5px 5px;
-}
-
-.search {
-  margin: 5px auto;
+  line-height: 1.6;
 }
 
 /* Store Logo */

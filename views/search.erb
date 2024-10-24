@@ -1,76 +1,42 @@
 <form action="/sales">
 
-  <div class="optionbox">
-    <div class="label">
-      <label for="store">Store:</label>
+  <div class="container">
+    <div class="optionscontainer">
+      <div class="labels">
+        <label for="store">Store:</label><br>
+        <label for="lowerprice">Minimum Price:</label><br>
+        <label for="upperprice">Maximum Price:</label><br>
+        <label for="metacritic">Min. Metacritic Score:</label><br>
+        <label for="AAA">AAA Games Only:</label><br>
+        <label for="title">Must Contain:</label><br>
+      </div>
+
+      <div class="options">
+        <select name="store" id="store">
+          <option value="Steam">Steam</option>
+          <option value="GamersGate">GamersGate</option>
+          <option value="GOG">GOG</option>
+          <option value="Origin">Origin</option>
+          <option value="Humble Store">Humble Store</option>
+          <option value="Uplay">Uplay</option>
+          <option value="Fanatical">Fanatical</option>
+          <option value="WinGameStore">WinGameStore</option>
+          <option value="GameBillet">GameBillet</option>
+          <option value="Epic Games Store">Epic Games Store</option>
+          <option value="Gamesplanet">Gamesplanet</option>
+          <option value="IndieGala">IndieGala</option>
+        </select><br>
+
+        <input type="text" id="lowerprice" name="lowerprice" size=17 value=0><br>
+        <input type="text" id="upperprice" name="upperprice" size=17 value=15><br>
+        <input type="text" id="metacritic" name="metacritic" size=17 value=80><br>
+        <input type="checkbox" id="AAA" name="AAA" value="yes" checked><br>
+        <input type="text" id="title" name="title" placeholder="Batman, Tetris, etc." style="font-style:italic" size=17><br>
+      </div>
     </div>
-    <div class="option">
-      <select name="store" id="store">
-        <option value="Steam">Steam</option>
-        <option value="GamersGate">GamersGate</option>
-        <option value="GOG">GOG</option>
-        <option value="Origin">Origin</option>
-        <option value="Humble Store">Humble Store</option>
-        <option value="Uplay">Uplay</option>
-        <option value="Fanatical">Fanatical</option>
-        <option value="WinGameStore">WinGameStore</option>
-        <option value="GameBillet">GameBillet</option>
-        <option value="Epic Games Store">Epic Games Store</option>
-        <option value="Gamesplanet">Gamesplanet</option>
-        <option value="IndieGala">IndieGala</option>
-      </select>
-    </div>
+  
+    <button>Search</button>
   </div>
 
-  <div class="optionbox">
-    <div class="label">
-      <label for="lowerprice">Minimum Price:</label>
-    </div>
-    <div class="option">
-      <input type="text" id="lowerprice" name="lowerprice" size=17 value=0>
-    </div>
-  </div>
-
-  <div class="optionbox">
-    <div class="label">
-      <label for="upperprice">Maximum Price:</label>
-    </div>
-    <div class="option">
-      <input type="text" id="upperprice" name="upperprice" size=17 value=15>
-    </div>
-  </div>
-
-  <div class="optionbox">
-    <div class="label">
-      <label for="metacritic">Min. Metacritic Score:</label>
-    </div>
-    <div class="option">
-      <input type="text" id="metacritic" name="metacritic" size=17 value=80>
-    </div>
-  </div>
-
-  <div class="optionbox">
-    <div class="label">
-      <label for="AAA">AAA Games Only:</label>
-    </div>
-    <div class="option">
-      <input type="checkbox" id="AAA" name="AAA" value="yes" checked>
-    </div>
-  </div>
-
-  <div class="optionbox">
-    <div class="label">
-      <label for="title">Must Contain:</label>
-    </div>
-    <div class="option">
-      <input type="text" id="title" name="title" placeholder="Batman, Tetris, etc." style="font-style:italic" size=17>
-    </div>
-  </div>
-
-  <div class="optionbox">
-    <div class="search">
-      <button>Search</button>
-    </div>
-  </div>
   <input type="hidden" id="pagenumber" name="pagenumber" value="0">
 </form>
