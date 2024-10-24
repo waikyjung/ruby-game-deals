@@ -32,12 +32,14 @@
           <div>Original Price:</div>
           <div>Sale Price:</div>
           <div>Discount:</div>
+          <div>Deal Link:</div>
         </div>
 
         <div class="center">
             <div class="price">$<%= game[3] %></div>
             <div class="bold">$<%= game[2] %></div>
             <div><%= game[4] %>%</div>
+            <div><a class="link" href="https://www.cheapshark.com/redirect?dealID=<%= game[9] %>" target="_blank">Get Deal</a></div>
         </div>
         
         <div class="gap"></div>
@@ -53,7 +55,7 @@
           <div class="bold"><%= game[7] %></div>
           <div><%= game[6] %>%</div>
           <div><%= game[5] %>%</div>
-          <div><a href="https://www.metacritic.com<%= game[1] %>" target="_blank">metacritic.com</a></div>
+          <div><a class="link" href="https://www.metacritic.com<%= game[1] %>" target="_blank">metacritic.com</a></div>
         </div>
 
       </div>

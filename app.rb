@@ -73,7 +73,8 @@ get("/sales") do
       deal.fetch("metacriticScore"),
       deal.fetch("steamRatingPercent"),
       deal.fetch("dealRating"),
-      deal.fetch("thumb")
+      deal.fetch("thumb"),
+      deal.fetch("dealID")
     ])
   end
   
