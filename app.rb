@@ -3,10 +3,11 @@ require "sinatra/reloader"
 require "http"
 require "json"
 
-set :public_folder, __dir__ + '/public'
+set :public_folder, __dir__ + '/'
 
 get("/") do
-  redirect("/search")
+  # redirect("/search")
+  erb(:search)
 end
 
 get("/search") do
