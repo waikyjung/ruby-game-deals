@@ -21,6 +21,11 @@ body {
   padding-bottom: 30px;
 }
 
+.newsearch {
+  color: green;
+  text-align: center;
+}
+
 .link{
   color: green;
 }
