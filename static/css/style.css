@@ -17,7 +17,7 @@ body {
 .container {
   max-width: 400px;
   margin: 0 auto;
-  padding: 20px 20px;
+  padding: 10px 20px;
   background: linear-gradient(90deg, #29bd09, #23b50f, #1dad12, #17a615, #119e17, #0b9618, #058f19, #00871a);
   font-size: 18px;
   text-align: center;
@@ -113,6 +113,10 @@ body {
 
 .bold {
   font-weight: bold;
+}
+
+.center {
+  text-align: center;
 }
 
 /* Page Navigation */
