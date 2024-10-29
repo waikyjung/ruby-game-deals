@@ -6,8 +6,8 @@ require "json"
 set :public_folder, __dir__ + '/'
 
 get("/") do
-  # redirect("/search")
-  erb(:search)
+  redirect("/search")
+  # erb(:search)
 end
 
 get("/search") do
