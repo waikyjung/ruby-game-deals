@@ -45,22 +45,22 @@ get("/deals") do
     @store_code = 30
   end
 
-  # lowerprice = params.fetch("lowerprice")
-  # upperprice = params.fetch("upperprice")
-  # metacritic = params.fetch("metacritic")
-  # params[:AAA] ? aaa = params.fetch("AAA") : aaa = ""
-  # aaa == "yes" ? aaa_option = "&AAA=0" : aaa_option = ""
-  # params[:title] ? title = params.fetch("title") :  title = ""
-  # title.to_s.length > 0 ? title_option = "&title=#{title}" : title_option = ""
-  # @pagenumber = params.fetch("pagenumber")
+  lowerprice = params.fetch("lowerprice")
+  upperprice = params.fetch("upperprice")
+  metacritic = params.fetch("metacritic")
+  params[:AAA] ? aaa = params.fetch("AAA") : aaa = ""
+  aaa == "yes" ? aaa_option = "&AAA=0" : aaa_option = ""
+  params[:title] ? title = params.fetch("title") :  title = ""
+  title.to_s.length > 0 ? title_option = "&title=#{title}" : title_option = ""
+  @pagenumber = params.fetch("pagenumber")
 
-  # data_request = "#{cheapshark_http}&storeID=#{@store_code}&lowerPrice=#{lowerprice}&upperPrice=#{upperprice}&metacritic=#{metacritic}"
-  # data_request += aaa_option
-  # data_request += title_option
-  # data_request += "&onSale=1"
-  # data_request += "&pageNumber="
+  data_request = "#{cheapshark_http}&storeID=#{@store_code}&lowerPrice=#{lowerprice}&upperPrice=#{upperprice}&metacritic=#{metacritic}"
+  data_request += aaa_option
+  data_request += title_option
+  data_request += "&onSale=1"
+  data_request += "&pageNumber="
 
-  # raw_response = HTTP.get("#{data_request}#{@pagenumber}")
+  raw_response = HTTP.get("#{data_request}#{@pagenumber}")
   # parsed_response = JSON.parse(raw_response)
   
   @deals = []
@@ -78,6 +78,6 @@ get("/deals") do
   #     deal.fetch("dealID")
   #   ])
   # end
-  
+  @test = data_request
   erb(:deals)
 end
