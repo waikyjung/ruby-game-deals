@@ -2,12 +2,158 @@
 <html>
   <head>
     <title>Game Sales</title>
-    <link rel="stylesheet" href="style.css">
+    <!--<link rel="stylesheet" href="style.css">-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <style>
+      * {
+        /* border: 1px red dashed; */
+        font-family: "Ubuntu", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      html {
+        min-height: 100%;
+      }
+
+      body {
+        background-color: rgba(0, 0, 0, 0.847);
+      }
+
+      /* Game Deals Logo */
+      .logo {
+        text-align: center;
+        color: white;
+        font-size: 12px;
+        padding-bottom: 30px;
+      }
+
+      .newsearch {
+        color: green;
+        text-align: center;
+      }
+
+      .link{
+        color: green;
+      }
+
+      /* Search Box */
+      .container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 10px 20px;
+        background: linear-gradient(90deg, #29bd09, #23b50f, #1dad12, #17a615, #119e17, #0b9618, #058f19, #00871a);
+        font-size: 18px;
+        text-align: center;
+        border-radius: 10px;
+      }
+
+      .optionscontainer {
+        display: flex;
+        padding-bottom: 10px;
+      }
+
+      .labels {
+        width: 180px;
+        text-align: right;
+        margin: 5px 5px;
+        line-height: 1.6;
+      }
+
+      .options {
+        width: 200px;
+        text-align: left;
+        margin: 5px 5px;
+        line-height: 1.6;
+      }
+
+      /* Store Logo */
+      .store {
+        text-align: center;
+        font-size: 36px;
+        color: white;
+        padding-bottom: 20px;
+      }
+
+      /* Deal Box */
+      .gap {
+        padding: 0px 10px;
+      }
+
+      .dealgold {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 10px 10px;
+        background: linear-gradient(120deg, #ffe902, #ffe105, #ffd90a, #ffd110, #ffc915, #ffc11b, #ffb920, #ffb124);
+        justify-content: space-around;
+        border-radius: 10px;
+      }
+
+      .dealsilver {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 10px 10px;
+        background: linear-gradient(120deg, #e8f1ff, #dae4f0, #ccd8e1, #bfcbd2, #b3bfc3, #a7b2b5, #9ca5a7, #919999);
+        justify-content: space-around;
+        border-radius: 10px;
+      }
+
+      .dealbronze {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 10px 10px;
+        background: radial-gradient(circle at 20% 0%, #ff8b17, #f8831e, #f07b24, #e87328, #e06c2b, #d7642e, #ce5e30, #c55731);
+        justify-content: space-around;
+        border-radius: 10px;
+      }
+
+      .titlecontainer {
+        display: flex;
+      }
+
+      .thumbnail {
+        padding: 5px 5px 0px 5px;
+      }
+
+      .title {
+        margin: auto auto;
+        padding-right: 40px;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .data{
+        display: flex;
+        justify-content: space-around;
+        padding: 0px 30px;
+        text-align: right;
+      }
+
+      .price {
+        text-decoration: line-through;
+        color: red;
+      }
+
+      .bold {
+        font-weight: bold;
+      }
+
+      .center {
+        text-align: center;
+      }
+
+      /* Page Navigation */
+      .pages {
+        font-size: 20px;
+        color: white;
+        text-align: center;
+      }
+    </style>
   </head>
 
   <body>
