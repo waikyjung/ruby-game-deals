@@ -61,23 +61,23 @@ get("/deals") do
   data_request += "&pageNumber="
 
   raw_response = HTTP.get("#{data_request}#{@pagenumber}")
-  # parsed_response = JSON.parse(raw_response)
+  parsed_response = JSON.parse(raw_response)
   
   @deals = []
-  # parsed_response.each do |deal|
-  #   @deals.push([
-  #     deal.fetch("title"),
-  #     deal.fetch("metacriticLink"),
-  #     deal.fetch("salePrice"),
-  #     deal.fetch("normalPrice"),
-  #     deal.fetch("savings").to_f.round(0),
-  #     deal.fetch("metacriticScore"),
-  #     deal.fetch("steamRatingPercent"),
-  #     deal.fetch("dealRating"),
-  #     deal.fetch("thumb"),
-  #     deal.fetch("dealID")
-  #   ])
-  # end
-  @test = data_request
+  parsed_response.each do |deal|
+    @deals.push([
+      deal.fetch("title"),
+      deal.fetch("metacriticLink"),
+      deal.fetch("salePrice"),
+      deal.fetch("normalPrice"),
+      deal.fetch("savings").to_f.round(0),
+      deal.fetch("metacriticScore"),
+      deal.fetch("steamRatingPercent"),
+      deal.fetch("dealRating"),
+      deal.fetch("thumb"),
+      deal.fetch("dealID")
+    ])
+  end
+
   erb(:deals)
 end
